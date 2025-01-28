@@ -10,24 +10,22 @@ import random
 class OtoMotoSpider(scrapy.Spider):
     name = 'OtoMotoSpider'
     base_url = 'https://www.otomoto.pl/osobowe/{model}?page={page_number}'
-    # car_models = ['Abarth', 'Acura', 'Aiways', 'Aixam', 'Alfa Romeo', 'Alpine', 'Arcfox', 'Asia', 'Aston Martin',
-    #               'Audi', 'Austin', 'Autobianchi', 'AVATR', 'Baic', 'Bentley', 'BMW', 'BMW-ALPINA', 'Brilliance',
-    #               'Bugatti', 'Buick', 'BYD', 'Cadillac', 'Casalini', 'Caterham', 'Cenntro', 'Changan', 'Chatenet',
-    #               'Chevrolet', 'Chrysler', 'Citroën', 'Cupra', 'Dacia', 'Daewoo', 'Daihatsu', 'DeLorean', 'DFM',
-    #               'DFSK', 'DKW', 'Dodge', 'Doosan', 'DR MOTOR', 'DS Automobiles', 'e.GO', 'Elaris', 'FAW', 'FENDT',
-    #               'Ferrari', 'Fiat', 'Fisker', 'Ford', 'Forthing', 'Gaz', 'Geely', 'Genesis', 'GMC', 'GWM', 'HiPhi',
-    #               'Honda', 'Hongqi', 'Hummer', 'Hyundai', 'iamelectric', 'Ineos', 'Infiniti', 'Inny', 'Isuzu', 'Iveco',
-    #               'JAC', 'Jaecoo', 'Jaguar', 'Jeep', 'Jetour', 'Jinpeng', 'Kia', 'KTM', 'Lada', 'Lamborghini', 'Lancia',
-    #               'Land Rover', 'Leapmotor', 'LEVC', 'Lexus', 'Ligier', 'Lincoln', 'Lixiang', 'Lotus', 'LTI', 'Lucid',
-    #               'Lynk &amp; Co', 'MAN', 'Maserati', 'MAXIMUS', 'Maxus', 'Maybach', 'Mazda', 'McLaren', 'Mercedes-Benz',
-    #               'Mercury', 'MG', 'Microcar', 'MINI', 'Mitsubishi', 'Morgan', 'NIO', 'Nissan', 'Nysa', 'Oldsmobile',
-    #               'Omoda', 'Opel', 'Peugeot', 'Piaggio', 'Plymouth', 'Polestar', 'Polonez', 'Pontiac', 'Porsche', 'RAM',
-    #               'Renault', 'Rolls-Royce', 'Rover', 'Saab', 'SARINI', 'Saturn', 'Seat', 'Seres', 'Shuanghuan', 'Skoda',
-    #               'Skywell', 'Skyworth', 'Smart', 'SsangYong', 'Subaru', 'Suzuki', 'Syrena', 'Tarpan', 'Tata', 'Tesla',
-    #               'Toyota', 'Trabant', 'Triumph', 'Uaz', 'Vauxhall', 'VELEX', 'Volkswagen', 'Volvo', 'Voyah', 'WALTRA',
-    #               'Warszawa', 'Wartburg', 'Wołga', 'Xiaomi', 'XPeng', 'Zaporożec', 'Zastava', 'ZEEKR', 'Zhidou', 'Żuk']
-
-    car_models = ['BMW', 'Audi', 'Fiat']
+    car_models = ['Abarth', 'Acura', 'Aiways', 'Aixam', 'Alfa Romeo', 'Alpine', 'Arcfox', 'Asia', 'Aston Martin',
+                  'Audi', 'Austin', 'Autobianchi', 'AVATR', 'Baic', 'Bentley', 'BMW', 'BMW-ALPINA', 'Brilliance',
+                  'Bugatti', 'Buick', 'BYD', 'Cadillac', 'Casalini', 'Caterham', 'Cenntro', 'Changan', 'Chatenet',
+                  'Chevrolet', 'Chrysler', 'Citroën', 'Cupra', 'Dacia', 'Daewoo', 'Daihatsu', 'DeLorean', 'DFM',
+                  'DFSK', 'DKW', 'Dodge', 'Doosan', 'DR MOTOR', 'DS Automobiles', 'e.GO', 'Elaris', 'FAW', 'FENDT',
+                  'Ferrari', 'Fiat', 'Fisker', 'Ford', 'Forthing', 'Gaz', 'Geely', 'Genesis', 'GMC', 'GWM', 'HiPhi',
+                  'Honda', 'Hongqi', 'Hummer', 'Hyundai', 'iamelectric', 'Ineos', 'Infiniti', 'Inny', 'Isuzu', 'Iveco',
+                  'JAC', 'Jaecoo', 'Jaguar', 'Jeep', 'Jetour', 'Jinpeng', 'Kia', 'KTM', 'Lada', 'Lamborghini', 'Lancia',
+                  'Land Rover', 'Leapmotor', 'LEVC', 'Lexus', 'Ligier', 'Lincoln', 'Lixiang', 'Lotus', 'LTI', 'Lucid',
+                  'Lynk &amp; Co', 'MAN', 'Maserati', 'MAXIMUS', 'Maxus', 'Maybach', 'Mazda', 'McLaren', 'Mercedes-Benz',
+                  'Mercury', 'MG', 'Microcar', 'MINI', 'Mitsubishi', 'Morgan', 'NIO', 'Nissan', 'Nysa', 'Oldsmobile',
+                  'Omoda', 'Opel', 'Peugeot', 'Piaggio', 'Plymouth', 'Polestar', 'Polonez', 'Pontiac', 'Porsche', 'RAM',
+                  'Renault', 'Rolls-Royce', 'Rover', 'Saab', 'SARINI', 'Saturn', 'Seat', 'Seres', 'Shuanghuan', 'Skoda',
+                  'Skywell', 'Skyworth', 'Smart', 'SsangYong', 'Subaru', 'Suzuki', 'Syrena', 'Tarpan', 'Tata', 'Tesla',
+                  'Toyota', 'Trabant', 'Triumph', 'Uaz', 'Vauxhall', 'VELEX', 'Volkswagen', 'Volvo', 'Voyah', 'WALTRA',
+                  'Warszawa', 'Wartburg', 'Wołga', 'Xiaomi', 'XPeng', 'Zaporożec', 'Zastava', 'ZEEKR', 'Zhidou', 'Żuk']
 
     proxies = [
         'http://173.212.227.160:21025',
