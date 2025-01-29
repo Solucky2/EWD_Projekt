@@ -1,6 +1,5 @@
 from typing import Any, Iterable
 import scrapy
-from scrapy.crawler import CrawlerProcess
 from scrapy.http import Response
 from scrapy.loader import ItemLoader
 from SubClasses import OtomotoItem
@@ -75,20 +74,3 @@ class OtoMotoSpider(scrapy.Spider):
         loader.add_xpath('seller_type', './/li[contains(@class, "ooa-1y6ajhy ebwza7n5")]/text()')
         loader.add_xpath('price', './/h3[contains(@class, "e6r213i1 ooa-1n2paoq")]/text()')
         return loader.load_item()
-
-process = CrawlerProcess(settings={
-    "FEEDS": {
-        "output_otomotoBest.csv": {"format": "csv"},
-    },
-    "USER_AGENT": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                   "AppleWebKit/537.36 (KHTML, like Gecko) "
-                   "Chrome/117.0.5938.92 Safari/537.36"),
-    "LOG_LEVEL": "INFO",
-    "HTTPCACHE_ENABLED": False,
-    "DOWNLOAD_DELAY": 1,
-    "RANDOMIZE_DOWNLOAD_DELAY": True,
-    "ROBOTSTXT_OBEY": False,
-})
-
-process.crawl(OtoMotoSpider)
-process.start()
