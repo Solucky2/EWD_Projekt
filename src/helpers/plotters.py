@@ -57,7 +57,7 @@ def plotly_bar(df: pd.DataFrame,x_axis: str, y_axis: str, title: str,
     fig.show()
 
 
-def plot_corr_matrix(df: pd.DataFrame, fig_width: int = 8, fig_height: int = 10):
+def plot_corr_matrix(df: pd.DataFrame, column_name: str, fig_width: int = 8, fig_height: int = 10):
     corr = df.corr()
     plt.figure(figsize=(fig_width, fig_height))
     sns.heatmap(
@@ -68,5 +68,5 @@ def plot_corr_matrix(df: pd.DataFrame, fig_width: int = 8, fig_height: int = 10)
         cbar=True,
         linewidths=0.5
     )
-    plt.title("Macierz korelacji zmiennych z 'price_pln'", fontsize=16)
+    plt.title(f"Macierz korelacji zmiennych z kolumną {column_name}", fontsize=16)
     plt.show()

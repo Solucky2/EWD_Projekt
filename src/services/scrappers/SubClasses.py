@@ -23,16 +23,3 @@ class OtomotoItem(scrapy.Item):
     place = scrapy.Field(input_processor=MapCompose(_default_na), output_processor=TakeFirstWithDefault())
     seller_type = scrapy.Field(input_processor=MapCompose(_default_na), output_processor=TakeFirstWithDefault())
     price = scrapy.Field(input_processor=MapCompose(_default_na), output_processor=TakeFirstWithDefault())
-
-
-class OtomotoItem2(scrapy.Item):
-    model = scrapy.Field()
-    name = scrapy.Field()
-    users_data = scrapy.Field()
-    mileage = scrapy.Field()
-    fuel_type = scrapy.Field()
-    gearbox = scrapy.Field()
-    year = scrapy.Field()
-    place = scrapy.Field()
-    seller_type = scrapy.Field()
-    price = scrapy.Field()

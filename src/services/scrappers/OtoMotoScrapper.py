@@ -1,6 +1,5 @@
 from typing import Any, Iterable
 import scrapy
-from isapi.samples.redirector import proxy
 from scrapy.crawler import CrawlerProcess
 from scrapy.http import Response
 from scrapy.loader import ItemLoader
