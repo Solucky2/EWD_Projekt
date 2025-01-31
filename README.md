@@ -11,9 +11,11 @@ Opis struktury projektu:
 **\notebooks\cleaned** - folder zawierający dane zapisane w formie .csv po czyszczeniu oraz zakodowaniu za pomocą  
 TargetEncoder  
 **\notebooks\cleaner** - notatnik do czyszczenia danych oraz ich transformacji  
-**\notebooks\models** - folder z modelami: Regresja Liniowa, Drzewo Decyzyjne, SVM, Ensemble
+**\notebooks\models** - folder z modelami: Regresja Liniowa, Drzewo Decyzyjne, SVM, Ensemble  
 **\notebooks\raw** - docelowy folder do danych pobranych na sucho z serwisu internetowego  
-**\notebooks\visuals** - notantik z wykrasami przedstawiającymi wstępne zależności między danymi  
+**\notebooks\visuals** - notatnik z wykrasami przedstawiającymi wstępne zależności między danymi  
+**\notebooks\visuals\plotly_graphs** - folder z wykresami wygenerowanymi z plotly z funkcji z pliku **plotters.py** - 
+docelowo znajdują się w notatniki **visulas**, jednakże github ma problem z ich wyświetlaniem  
 **\helpers\plotters** - funkcje pomocnicze do tworzenia wykresów w określonym stylu graficznym
 
 
