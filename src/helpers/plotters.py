@@ -70,3 +70,14 @@ def plot_corr_matrix(df: pd.DataFrame, column_name: str, fig_width: int = 8, fig
     )
     plt.title(f"Macierz korelacji zmiennych z kolumną {column_name}", fontsize=16)
     plt.show()
+
+
+def plot_regular_bar(values: list, title: str, x_axis_title: str, y_axis_title: str,
+                     font_color: str = "white"):
+    models_names, models_scores = zip(*values)
+    models_names = [model_name.replace(' ', '\n') for model_name in models_names]
+    plt.bar(models_names, models_scores)
+    plt.title(title, color=font_color)
+    plt.xlabel(x_axis_title, color=font_color)
+    plt.ylabel(y_axis_title, color=font_color)
+    plt.show()
