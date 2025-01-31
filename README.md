@@ -18,4 +18,5 @@ TargetEncoder
 docelowo znajdują się w notatniki **visulas**, jednakże github ma problem z ich wyświetlaniem  
 **\helpers\plotters** - funkcje pomocnicze do tworzenia wykresów w określonym stylu graficznym
 
+Autor: Przemysław Oneksiak
 
