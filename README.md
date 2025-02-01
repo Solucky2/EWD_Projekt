@@ -4,7 +4,10 @@ Projekt zaliczeniowy mający na celu przeprowadzenie analizy oraz predykcji cen 
 
 https://www.otomoto.pl/
 
-W celu pobrania potrzebnych paczek: pip install -r requirements.txt  
+W celu pobrania potrzebnych paczek: **pip install -r requirements.txt**  
+W celu uruchomienia Spider należy w lokalizacji **\src\services\scrappers** uruchomić poniższy skrypt:  
+**scrapy runspider OtoMotoSpider -o '../../notebooks/raw/filename.csv'**  
+Nazwa pliku może być dowolnie zmieniana. Ewentualnie należy uruchomić plik **src\services\scrappers\OtoMotoScrapper.py**
 
 Opis struktury projektu:  
 **\services** - folder zawierający klasę scrapy.Spider oraz klasy pomocnicze  
